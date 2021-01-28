@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R betty:holberton *
+sudo chown -R betty:holberton *
