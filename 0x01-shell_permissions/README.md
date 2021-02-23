@@ -1,7 +1,6 @@
 **Project containing scripts about sheel permisions**
 
 ## Quiz questions
-
 ### Question #0
 Which command should I use for changing a file permission?
 - [ ] su
@@ -52,7 +51,6 @@ What is the numerical value for the ----w---x permission?
 
 
 # Tasks
-
 ## [0. My name is Betty](0-iam_betty)
 Create a script that switches the current user to the user ``betty``.
 - You should use exactly 8 characters for your command (+1 character for the new line)
