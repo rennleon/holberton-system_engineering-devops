@@ -1,5 +1,55 @@
 **Project containing scripts about sheel permisions**
 
+## Quiz questions
+
+### Question #0
+Which command should I use for changing a file permission?
+- [ ] su
+- [x] chmod
+- [ ] chown
+- [ ] chgrp
+
+### Question #1
+Which command should I use for changing a file owner?
+- [ ] su
+- [ ] chmod
+- [x] chown
+- [ ] chgrp
+
+### Question #2
+What is the permission value for a file without any restriction?
+- [ ] 600
+- [ ] 644
+- [x] 777
+
+### Question #3
+What is the permission value for a file read only for the group owner?
+- [x] 040
+- [ ] 050
+- [ ] 060
+- [ ] 070
+
+### Question #4
+What is the numerical value for the rwx------ permission?
+- [ ] 600
+- [ ] 621
+- [ ] 704
+- [x] 700
+
+### Question #5
+What is the numerical value for the r-xr--r-- permission?
+- [ ] 522
+- [x] 544
+- [ ] 644
+- [ ] 411
+
+### Question #6
+What is the numerical value for the ----w---x permission?
+- [ ] 123
+- [ ] 121
+- [ ] 221
+- [x] 021
+
 ## [0. My name is Betty](0-iam_betty)
 Create a script that switches the current user to the user ``betty``.
 - You should use exactly 8 characters for your command (+1 character for the new line)
