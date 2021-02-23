@@ -29,6 +29,9 @@ What does RTFM stand for?
 - [ ] Read, Teach, Forget, Migrate
 - [x] Read The F** Manual
 
+
+# Tasks
+
 ## [0. Where am I?](0-current_working_directory)
 Write a script that prints the absolute path name of the current working directory.
 ```
