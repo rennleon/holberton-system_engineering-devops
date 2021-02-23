@@ -4,7 +4,7 @@
 
 ### Resources
 **Read or watch:**
-* [What Is The Shell?]: https://intranet.hbtn.io/rltoken/pn2_LGNuA1yFY7zy3CQmig
+* [What Is The Shell?](https://intranet.hbtn.io/rltoken/pn2_LGNuA1yFY7zy3CQmig)
 * [Navigation](https://intranet.hbtn.io/rltoken/Hh8elGgCpj--6othR7S7GQ)
 * [Looking Around](https://intranet.hbtn.io/rltoken/84xsZOempqy5I7ZkueeIsg)
 * [A Guided Tour](https://intranet.hbtn.io/rltoken/Jp1c4V3hJiGBuVzYCtnQKw)
