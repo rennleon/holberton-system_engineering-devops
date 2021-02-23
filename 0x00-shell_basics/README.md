@@ -1,7 +1,6 @@
 **This project contains files with shell basic scripts**
 
 ## Quiz questions
-
 ### Question #0
 What command would you use to list files on Linux?
 - [ ] pwd
@@ -31,7 +30,6 @@ What does RTFM stand for?
 
 
 # Tasks
-
 ## [0. Where am I?](0-current_working_directory)
 Write a script that prints the absolute path name of the current working directory.
 ```
