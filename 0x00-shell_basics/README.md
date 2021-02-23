@@ -1,5 +1,34 @@
 **This project contains files with shell basic scripts**
 
+## Quiz questions
+
+### Question #0
+What command would you use to list files on Linux?
+- [] pwd
+- [] cd
+- [x] ls
+- [] list
+- [] which
+
+### Question #1
+What does LTS stand for?
+- [x] Long Term Support
+- [] Long Time Support
+- [] Last Terrible Service
+
+### Question #2
+How do you change directory on Linux?
+- [] pwd
+- [x] cd
+- [] ls
+- [] which
+
+### Question #3
+What does RTFM stand for?
+- [] Remember The First Manipulation
+- [] Read, Teach, Forget, Migrate
+- [x] Read The F** Manual
+
 ## [0. Where am I?](0-current_working_directory)
 Write a script that prints the absolute path name of the current working directory.
 ```
