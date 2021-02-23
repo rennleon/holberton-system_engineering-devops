@@ -4,29 +4,29 @@
 
 ### Question #0
 What command would you use to list files on Linux?
-- [] pwd
-- [] cd
+- [ ] pwd
+- [ ] cd
 - [x] ls
-- [] list
-- [] which
+- [ ] list
+- [ ] which
 
 ### Question #1
 What does LTS stand for?
 - [x] Long Term Support
-- [] Long Time Support
-- [] Last Terrible Service
+- [ ] Long Time Support
+- [ ] Last Terrible Service
 
 ### Question #2
 How do you change directory on Linux?
-- [] pwd
+- [ ] pwd
 - [x] cd
-- [] ls
-- [] which
+- [ ] ls
+- [ ] which
 
 ### Question #3
 What does RTFM stand for?
-- [] Remember The First Manipulation
-- [] Read, Teach, Forget, Migrate
+- [ ] Remember The First Manipulation
+- [ ] Read, Teach, Forget, Migrate
 - [x] Read The F** Manual
 
 ## [0. Where am I?](0-current_working_directory)
