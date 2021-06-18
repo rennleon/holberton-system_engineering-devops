@@ -2,7 +2,7 @@
 # This script displays information related about the `holbertonschool` file
 
 filename="holbertonschool"
-if [ -f "$filename" ] || [ -d "$filename" ]
+if [ -e "$filename" ]
 then
 	echo "$filename file exists"
 
@@ -10,7 +10,7 @@ then
 	then
 		echo "$filename file is not empty"
 
-	if [ ! -d "$filename" ]
+	if [ -f "$filename" ]
 	then
 		echo "$filename is a regular file"
 	fi
