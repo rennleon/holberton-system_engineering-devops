@@ -4,5 +4,16 @@
 filename="/etc/passwd"
 while IFS= read -r line
 do
-	echo "$line" | cut -d':' -f1,3,6
+	IFS=:
+	set "$line"
+
+	USERNAME=$1
+	PASSWORD=$2
+	USER_ID=$3
+	GROUP_ID=$4
+	USER_ID_INFO=$5
+	HOME_DIRECTORY=$6
+	COMMAND_SHELL=$7
+
+	echo "The user $USERNAME is part of the $GROUP_ID gang, lives in $HOME_DIRECTORY and rides $COMMAND_SHELL. $USER_ID's place is protected by the passcode $PASSWORD, more info about the user here: $USER_ID_INFO"
 done < "$filename"
