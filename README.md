@@ -103,9 +103,9 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 ### More Info
 *Example of line count and first line*
 ```
-julien@ubuntu:/tmp$ wc -l 12-file_type 
+julien@ubuntu:/tmp$ wc -l 12-file_type
 2 12-file_type
-julien@ubuntu:/tmp$ head -n 1 12-file_type 
+julien@ubuntu:/tmp$ head -n 1 12-file_type
 #!/bin/bash
 julien@ubuntu:/tmp$
 ```
@@ -318,3 +318,17 @@ Note: You do not have to learn about ``awk``, ``tar``, ``bzip2``, ``date``, ``sc
 
 ### Manual QA Review
 **It is your responsibility to request a review for your blog from a peer before the projects deadline. If no peers have been reviewed, you should request a review from a TA or staff member.**
+
+
+## [0x04-loops_conditions_and_parsing](0x04-loops_conditions_and_parsing)
+
+This project is about basic shell scripting below the learning obejctives are listed for this project
+
+**Learning Objectives**
+- How to create SSH keys
+- What is the advantage of using `#!/usr/bin/env` bash over `#!/bin/bash`
+- How to use `while`, `until` and `for` loops
+- How to use `if`, `else`, `elif` and `case` condition statements
+- How to use the `cut` command
+- What are files and other comparison operators, and how to use them
+
