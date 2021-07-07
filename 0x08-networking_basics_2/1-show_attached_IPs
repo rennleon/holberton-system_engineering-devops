@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-# This script set localhost to 127.0.0.2 and facebook.com to 8.8.8.8
+# This script lists active IPv4 on this machine
 ifconfig | grep -Eo "inet addr:[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*" | cut -d: -f2
