@@ -1,6 +1,6 @@
 # Command line for the win
 
-This projects contains images showing that first 27 challenges of (CDM CHALLENGE)[https://intranet.hbtn.io/rltoken/dGik0ttp83Dxj-_G5CWe_g] were solved.
+This projects contains images showing that first 27 challenges of [CDM CHALLENGE](https://intranet.hbtn.io/rltoken/dGik0ttp83Dxj-_G5CWe_g) were solved.
 
 ## Tasks
 
