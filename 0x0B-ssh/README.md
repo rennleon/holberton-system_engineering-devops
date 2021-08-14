@@ -6,6 +6,7 @@
 - [Public Key Authentication for SSH](https://www.ssh.com/academy/ssh/public-key-authentication)
 - [Authorized key in SSH](https://www.ssh.com/academy/ssh/authorized-key)
 - [Understanding the SSH Encryption and Connection Process](https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process)
+- [SSH Key-Based Authentication - How to SSH Without a Password](https://www.youtube.com/watch?v=vpk_1gldOAE)
 
 ## Tasks
 ## 0. Use a private key
