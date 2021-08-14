@@ -1,6 +1,6 @@
 # 0x0B. SSH
 
-**Usefull links**
+**Useful links**
 - [SSH essentials](https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys)
 - [SSH Config File](https://www.ssh.com/academy/ssh/config)
 - [Public Key Authentication for SSH](https://www.ssh.com/academy/ssh/public-key-authentication)
