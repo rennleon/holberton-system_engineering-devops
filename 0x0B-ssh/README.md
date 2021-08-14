@@ -120,6 +120,12 @@ Write a `puppet` manifest to set up your client `SSH configuration file` so that
 - Your SSH client configuration must be configured to use the private key `~/.ssh/holberton`
 - Your SSH client configuration must be configured to `refuse` to `authenticate` using a `password`
 
+**Install file_line**
+```shell
+$ puppet module install puppetlabs/stdlib
+$ puppet describe file_line
+```
+
 ```shell
 vagrant@ubuntu-xenial:~$ sudo puppet apply 100-puppet_ssh_config.pp
 Notice: Compiled catalog for ubuntu-xenial in environment production in 0.11 seconds
