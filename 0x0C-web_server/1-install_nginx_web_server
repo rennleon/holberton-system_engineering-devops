@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Installs nginx server and set an html file to show for GET requests
+apt update
+apt install -y nginx
+echo "Holberton School for the win!" > /var/www/html/index.html
