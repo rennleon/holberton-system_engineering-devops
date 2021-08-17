@@ -3,6 +3,7 @@
 # Creates html page to send as response to GET requests
 # Creates a config file for the nginx server
 # Configures a route to redirect with code 301
+# COnfigures a 404 page error
 apt update
 apt install -y nginx
 
@@ -19,10 +20,6 @@ server {
 	index index.html index.htm index.nginx-debian.html;
 
 	server_name _;
-
-	location / {
-		try_files $uri $uri/ =404;
-	}
 
 	location /redirect_me {
 		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
