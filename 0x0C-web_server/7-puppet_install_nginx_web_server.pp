@@ -17,19 +17,8 @@ server {
 }
 "
 
-exec { 'Update packages':
-  command => 'apt update',
-  path    => ['/usr/bin/', '/bin']
-}
-
-package { 'Install nginx':
+package { 'nginx':
   ensure  => 'installed',
-  require => Exec['Update packages'],
-  name    => 'nginx'
-}
-
-file { ['/var', '/var/www', '/var/www/html']:
-  ensure => 'directory'
 }
 
 file { 'Create default index.html':
@@ -39,10 +28,6 @@ file { 'Create default index.html':
   content => 'Holberton School is cool!'
 }
 
-file { ['/etc', '/etc/nginx', '/etc/nginx/sites-available']:
-  ensure => 'directory'
-}
-
 file { 'Create nginx configuration file':
   ensure  => 'present',
   name    => 'default',
@@ -50,12 +35,6 @@ file { 'Create nginx configuration file':
   content => $defaultconfig
 }
 
-exec { 'Restart nginx server':
-  command => 'service nginx restart',
-  path    => ['/usr/sbin']
-}
-
-service { 'Make sure nginx is up and running':
+service { 'nginx':
   ensure => 'running',
-  name   => 'nginx'
 }
