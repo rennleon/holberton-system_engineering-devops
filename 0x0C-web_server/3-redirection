@@ -11,13 +11,21 @@ echo "Holberton School for the win!" > /var/www/html/index.html
 cat > /etc/nginx/sites-available/default << "EOF"
 # Default server configuration
 server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
+  listen 80 default_server;
+  listen [::]:80 default_server;
 
-	root /var/www/html;
-	index index.html index.htm;
+  root /var/www/html;
+  index index.html index.htm index.nginx-debian.html;
 
-	rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+  server_name _;
+
+	location /redirect_me {
+		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+	}
+
+  location / {
+    try_files $uri $uri/ =404;
+  }
 }
 EOF
 
