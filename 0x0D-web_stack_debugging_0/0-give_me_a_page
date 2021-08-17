@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 # starts apache2 server
-service apache2 start
+sed -i 's/.*ServerName.*//g' /etc/apache2/apache2.conf
+echo "ServerName localhost" >> /etc/apache2/apache2.conf
+service apache2 restart
