@@ -3,8 +3,8 @@
 # Creates html page to send as response to GET requests
 # Creates a config file for the nginx server
 # Configures a route to redirect with code 301
-apt update
-apt install -y nginx
+apt-get update
+apt-get install -y nginx
 
 echo "Holberton School for the win!" > /var/www/html/index.html
 
@@ -16,8 +16,6 @@ server {
 
 	root /var/www/html;
 	index index.html index.htm;
-
-	server_name _;
 
 	rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
 }
