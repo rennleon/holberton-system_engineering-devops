@@ -30,11 +30,12 @@ file { 'Create default index.html':
 
 file { 'Create nginx configuration file':
   ensure  => 'present',
+  notify  => Service['nginx'],
   name    => 'default',
   path    => '/etc/nginx/sites-available/default',
   content => $defaultconfig
 }
 
 service { 'nginx':
-  ensure => 'running',
+  ensure => 'running'
 }
