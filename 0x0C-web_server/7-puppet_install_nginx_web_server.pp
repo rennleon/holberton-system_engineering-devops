@@ -11,20 +11,21 @@ server {
 
 	server_name _;
 	
-	location /redirect_me {
+	location =/redirect_me {
 		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-	}
-
-	location / {
-		try_files ${uri} ${uri}/ =404;
 	}
 }
 "
 
+exec { 'Update packages':
+  command => 'apt update',
+  path    => ['/usr/bin/', '/bin']
+}
+
 package { 'Install nginx':
-  ensure   => 'installed',
-  name     => 'nginx',
-  provider => 'aptitude'
+  ensure  => 'installed',
+  require => Exec['Update packages'],
+  name    => 'nginx'
 }
 
 file { ['/var', '/var/www', '/var/www/html']:
@@ -44,12 +45,17 @@ file { ['/etc', '/etc/nginx', '/etc/nginx/sites-available']:
 
 file { 'Create nginx configuration file':
   ensure  => 'present',
-  name    => 'default'
+  name    => 'default',
   path    => '/etc/nginx/sites-available/default',
   content => $defaultconfig
 }
 
 exec { 'Restart nginx server':
   command => 'service nginx restart',
-  path    => ['/usr/sbin', '/sbin', '/bin', '/usr/bin']
+  path    => ['/usr/sbin']
+}
+
+service { 'Make sure nginx is up and running':
+  ensure => 'running',
+  name   => 'nginx'
 }
