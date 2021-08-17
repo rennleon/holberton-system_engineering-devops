@@ -37,5 +37,6 @@ file { 'Create nginx configuration file':
 }
 
 service { 'nginx':
-  ensure => 'running'
+  ensure  => 'running',
+  require => Package['nginx']
 }
