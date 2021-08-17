@@ -8,7 +8,7 @@ server {
 	root /var/www/html;
 	index index.html index.htm;
 
-	location =/redirect_me {
+	location /redirect_me {
 		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
 	}
 
@@ -28,14 +28,14 @@ file { 'Create default index.html':
   ensure  => 'present',
   name    => 'index.html',
   path    => '/var/www/html/index.html',
-  content => 'Holberton School is cool!'
+  content => "Holberton School is cool!\n"
 }
 
 file { 'Create default 404.html':
   ensure  => 'present',
   name    => '404.html',
   path    => '/var/www/html/404.html',
-  content => 'Ceci n\'est pas une page'
+  content => "Ceci n'est pas une page\n"
 }
 
 file { 'Create nginx configuration file':
