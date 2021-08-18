@@ -76,7 +76,7 @@ holbertonschool.tech.   7199    IN  A   184.72.193.201
 
 $
 ```
-Verify the Registrar here: [https://whois.whoisxmlapi.com/]() and you must see in the JSON response: `"registrarName": "Dotserve Inc"`
+Verify the [Registrar](https://whois.whoisxmlapi.com/) and you must see in the JSON response: `"registrarName": "Dotserve Inc"`
 
 `File:` [2-setup_a_domain_name](2-setup_a_domain_name)
 
