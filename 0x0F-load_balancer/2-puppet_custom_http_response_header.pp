@@ -26,7 +26,7 @@ file { 'Create index.html':
   ensure  => 'present',
   name    => 'index.html',
   path    => '/var/www/html/index.html',
-  content => 'Holberton School for the win!'
+  content => 'Holberton School for the win!\n'
 }
 
 file { 'Create nginx config file':
