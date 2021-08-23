@@ -49,8 +49,8 @@ frontend http_front
 backend web-backend
 	balance roundrobin
 	mode http
-	server web1 35.243.194.38:80 check
-	server web2 54.91.79.148:80 check
+	server web-01 35.243.194.38:80 check
+	server web-02 54.91.79.148:80 check
 EOF
 
 service haproxy restart
