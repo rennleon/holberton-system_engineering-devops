@@ -1,48 +1,17 @@
-# This manifest configures an nginx server
-
-$nginx_config = "# Default server configuration
-server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
-
-	add_header X-Served-By \$hostname;
-
-	root /var/www/html;
-	index index.html index.htm index.nginx-debian.html;
-
-	server_name _;
-
-	location / {
-		try_files \$uri \$uri/ =404;
-	}
-}
-"
-
-exec { 'update packages':
-  command => 'apt update',
-  path    => '/usr/bin'
-}
+# This manifests installs and configures nginx
 
 package { 'nginx':
-  ensure  => 'installed',
-  require => Exec['update packages']
+  ensure => 'installed',
 }
 
-file { 'Create index.html':
-  ensure  => 'present',
-  name    => 'index.html',
-  path    => '/var/www/html/index.html',
-  content => 'Holberton School for the win!\n'
+file_line { 'Add headers':
+  ensure => 'present',
+  path   => '/etc/nginx/sites-available/default',
+  after  => '.*listen \[.*;',
+  line   => '	add_header X-Served-By $hostname'
 }
 
-file { 'Create nginx config file':
-  ensure  => 'present',
-  name    => 'default',
-  path    => '/etc/nginx/sites-available/default',
-  content => $nginx_config
-}
-
-service { 'nginx':
+service {'nginx':
   ensure  => 'running',
   require => Package['nginx']
 }
