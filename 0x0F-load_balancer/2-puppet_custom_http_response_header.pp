@@ -1,3 +1,5 @@
+# This manifest configures an nginx server
+
 $nginx_config = "# Default server configuration
 server {
 	listen 80 default_server;
