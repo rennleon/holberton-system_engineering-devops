@@ -18,8 +18,14 @@ server {
 }
 "
 
+exec { 'update packages':
+  command => 'apt update',
+  path    => '/usr/bin'
+}
+
 package { 'nginx':
-  ensure => 'installed',
+  ensure  => 'installed',
+  require => Exec['update packages']
 }
 
 file { 'Create index.html':
