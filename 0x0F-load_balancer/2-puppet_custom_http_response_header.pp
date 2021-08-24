@@ -1,6 +1,10 @@
 # This manifest configures an nginx server
 
-package { 'nginx':
+exec { 'update packages':
+  command => '/usr/bin/apt update'
+}
+
+-> package { 'nginx':
   ensure  => 'installed',
 }
 
@@ -13,5 +17,4 @@ package { 'nginx':
 
 -> service { 'nginx':
   ensure  => 'running',
-  require => Package['nginx']
 }
