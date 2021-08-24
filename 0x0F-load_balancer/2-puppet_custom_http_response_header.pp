@@ -1,8 +1,7 @@
 # This manifest configures an nginx server
 
 exec { 'update packages':
-  command => 'apt update',
-  path    => '/usr/bin'
+  command => '/usr/bin/apt update'
 }
 
 -> package { 'nginx':
