@@ -11,7 +11,6 @@ dig_subdomain()
 
 if [ -n "$2" ]
 then
-    echo "Param is $2"
     dig_subdomain "$2" "$2.$1"
 elif [ -n "$1" ]
 then
