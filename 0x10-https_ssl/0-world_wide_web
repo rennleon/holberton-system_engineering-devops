@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script lists information about domains and subdomains
+
+dig_subdomain()
+{
+    row=$(dig "$2" | grep -A1 'ANSWER SECTION:' | tail -n+2)
+    row="$1 $row"
+    echo "$row" | awk '{print "The subdomain " $1 " is a " $5 " record and points to " $6}'
+}
+
+
+if [ -n "$2" ]
+then
+    echo "Param is $2"
+    dig_subdomain "$2" "$2.$1"
+elif [ -n "$1" ]
+then
+    dig_subdomain "www" "www.$1"
+    dig_subdomain "lb-01" "lb-01.$1"
+    dig_subdomain "web-01" "web-01.$1"
+    dig_subdomain "web-02" "web-02.$1"   
+fi
