@@ -1,6 +1,8 @@
 # 0x11. What happens when you type holbertonschool.com in your browser and press Enter
 
 ## Tasks
+![request flow](web_diagram.png)
+
 ## 0. What happens when...
 Write a blog post explaining what happens when you type `https://www.holbertonschool.com` in your browser and press Enter.
 
