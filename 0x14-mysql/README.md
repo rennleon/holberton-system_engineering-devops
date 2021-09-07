@@ -26,7 +26,7 @@ $
 
 
 ## 1. Let us in!
-Create a `MySQL` user on both servers with the `host name` set to `localhost`
+Create a `MySQL` user on both servers with the `hostname` set to `localhost`
 - Make sure that the user you create has permission to check the `primary/replica status` of your databases.
 
 ```sql
@@ -48,7 +48,7 @@ $
 ## 2. If only you could see what I've seen with your eyes
 In order to set up replication, you’ll need to have a database with at least one table and one row in your `primary` `MySQL server` to replicate from.
 
-- Create a `database` named `tyrell_corp` with a `table` named `nexus6` and *add at least one entry to it*.
+- Create a `database` named `tyrell_corp` with a `table` named `nexus6` and **add at least one entry to it**.
 - Make sure that `user` has `SELECT` permissions on your table.
 
 ```sql
@@ -80,7 +80,7 @@ Before to get started with `primary-replica` synchronization, there is one more 
 - `user` will need `SELECT privileges` on the `mysql.user` table in order to check that the `replica user` was created with the `correct permissions`.
 
 ```sql
-CREATE USER IF NOT EXISTS 'repl_usr_'@'%' IDENTIFIED BY 'repl_password';
+CREATE USER IF NOT EXISTS 'repl_usr'@'%' IDENTIFIED BY 'repl_password';
 GRANT REPLICATION SLAVE ON *.* TO 'repl_usr'@'%';
 GRANT SELECT ON `mysql`.* TO 'user'@'localhost';
 FLUSH PRIVILEGES;
@@ -175,7 +175,7 @@ mysql> show slave status\G
 *************************** 1. row ***************************
                Slave_IO_State: Waiting for master to send event
                   Master_Host: 142.27.68.78
-                  Master_User: replica
+                  Master_User: repl_usr
                   Master_Port: 3306
                 Connect_Retry: 60
               Master_Log_File: mysql-bin.000009
@@ -237,10 +237,10 @@ $ ls
 $ ./5-mysql_backup my_password
 backup.sql
 $ ls
-01-03-2017.tar.gz  5-mysql_backup  backup.sql
+07-09-2021.tar.gz  5-mysql_backup  backup.sql
 $
-$ file 01-03-2017.tar.gz
-01-03-2017.tar.gz: gzip compressed data, from Unix, last modified: Wed Mar  1 23:38:09 2017
+$ file 07-09-2021.tar.gz
+07-09-2021.tar.gz: gzip compressed data, from Unix, last modified: Tue Sep  7 21:12:54 2021
 $
 ```
 
