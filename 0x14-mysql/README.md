@@ -1,6 +1,6 @@
 # 0x14. MySQL
 
-Inthis project I learned how to configure `mysql` for master-slave replication.
+On this project I learned how to configure `mysql` for master-slave replication.
 
 **Useful links**
 
