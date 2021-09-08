@@ -4,6 +4,7 @@
 - [Introduction to load-balancing and HAproxy](https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts)
 - [HTTP header](https://www.techopedia.com/definition/27178/http-header)
 - [Debian/Ubuntu HAProxy packages](https://haproxy.debian.net/)
+- [The Four Essential Sections of an HAProxy Configuration](https://www.haproxy.com/blog/the-four-essential-sections-of-an-haproxy-configuration/)
 
 ## Tasks
 ## 0. Double the number of webservers
