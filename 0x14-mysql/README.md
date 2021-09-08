@@ -136,7 +136,7 @@ mysql> exit
 
 **Make a sqldump of master databases**
 ```shell
-$ mysqldump -uroot -p -all-databases --master-data > masterdump.sql
+$ mysqldump -uroot -p --all-databases --master-data > masterdump.sql
 ```
 
 ### ON SLAVE SERVER
@@ -157,7 +157,7 @@ Enter password:
 mysql> CHANGE MASTER TO
     -> MASTER_HOST='142.27.68.78'
     -> MASTER_USER='repl_usr'
-    -> MASTER_PASSWORD='repl_password'
+    -> MASTER_PASSWORD='repl_password';
 Query OK, 0 rows affected (0.01 sec)
 
 mysql> exit
