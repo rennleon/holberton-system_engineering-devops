@@ -10,10 +10,8 @@ if __name__ == '__main__':
     todos = rq.get(url.format(_id, 'todos')).json()
 
     name = user.get('name')
-    tasks_completed = len(
-        list(filter(lambda task: task.get('completed'), todos)))
-    tasks_all = len(todos)
+    tasks_completed = list(filter(lambda task: task.get('completed'), todos))
     print('Employee {} is done with tasks({}/{}):'
-          .format(name, tasks_completed, tasks_all))
-    for task in todos:
+          .format(name, len(tasks_completed), len(todos)))
+    for task in tasks_completed:
         print('\t {}'.format(task.get('title')))
