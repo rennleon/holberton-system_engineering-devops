@@ -7,13 +7,13 @@ import requests as rq
 url = 'https://jsonplaceholder.typicode.com/{}'
 if __name__ == '__main__':
     users = rq.get(url.format('users')).json()
-    todos = rq.get(url.format('todos')).json()
 
     data = dict()
     for u in users:
         _id = u.get('id')
         data[_id] = []
-        for t in todos:
+        uri = 'users/{}/todos'.format(_id)
+        for t in rq.get(url.format(uri)).json():
             task = {'task': t.get('title'),
                     'username': u.get('username'),
                     'completed': t.get('completed')}
