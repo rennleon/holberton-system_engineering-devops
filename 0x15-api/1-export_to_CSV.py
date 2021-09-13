@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This module makes a request to an api and displays the results to stdout"""
+"""This module makes a request to an API
+and exports the results to a csv file"""
 import csv
 from sys import argv
 import requests as rq
