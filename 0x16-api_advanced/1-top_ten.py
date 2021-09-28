@@ -9,7 +9,8 @@ def top_ten(subreddit):
     """This function fetches a reddit and returns the number of subscribers"""
     headers = {'User-Agent': 'My User Agent 1.0'}
     params = {'limit': 10}
-    res = rq.get(url.format(subreddit), headers=headers, params=params)
+    res = rq.get(url.format(subreddit), headers=headers, params=params,
+                 allow_redirects=False)
     body = res.json().get('data', None)
 
     if body is None:
