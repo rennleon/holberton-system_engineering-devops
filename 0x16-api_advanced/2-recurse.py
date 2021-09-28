@@ -23,9 +23,6 @@ def recurse(subreddit, hot_list=[], params={}):
     res = rq.get(url.format(subreddit), headers=headers, params=params,
                  allow_redirects=False)
 
-    if res.status_code != 200:
-        return None
-
     try:
         body = res.json().get('data', None)
         if body is None:
