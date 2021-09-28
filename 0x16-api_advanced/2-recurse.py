@@ -39,9 +39,9 @@ def recurse(subreddit, hot_list=[], params={}):
         'limit': 100
     }
 
+    append_posts(hot_list, body.get('children', []), 0)
+
     if updated_params.get('after') is None:
         return hot_list
-
-    append_posts(hot_list, body.get('children', []), 0)
 
     return recurse(subreddit, hot_list, params=updated_params)
