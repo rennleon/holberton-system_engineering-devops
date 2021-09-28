@@ -5,6 +5,16 @@ import requests as rq
 url = 'https://www.reddit.com/r/{}/hot/.json'
 
 
+def append_posts(hot_list=[], posts=[], ind=0):
+    """Add a post to the list"""
+    if ind >= len(posts):
+        return
+    post = posts[i].get('data', {})
+    title = post.get('title', '')
+    hot_list.append(title)
+    append_posts(hot_list, posts, ind + 1)
+
+
 def recurse(subreddit, hot_list=[], params={}):
     """This function fetches a reddit and returns a list with post
     titles for a reddit account"""
@@ -29,7 +39,6 @@ def recurse(subreddit, hot_list=[], params={}):
         'limit': 100
     }
 
-    for post in body.get('children', []):
-        hot_list.append(post.get('data', {}).get('title', ''))
+    append_posts(hot_list, body.get('children', []), 0)
 
     recurse(subreddit, hot_list, params=updated_params)
