@@ -13,14 +13,23 @@ def recurse(subreddit, hot_list=[], params={}):
     res = rq.get(url.format(subreddit), headers=headers, params=params,
                  allow_redirects=False)
 
-    body = res.json().get('data', None)
-    if body is None:
+    if res.status_code != 200:
         return None
 
-    after = body.get('after', '')
-    count = body.get('dist', 0)
+    try:
+        body = res.json().get('data', None)
+        if body is None:
+            return None
+    except ValueError:
+        return None
+
+    updated_params = {
+        'after': body.get('after', ''),
+        'count': body.get('dist', 0),
+        'limit': 100
+    }
 
     for post in body.get('children', []):
         hot_list.append(post.get('data', {}).get('title', ''))
 
-    recurse(subreddit, hot_list, params={'after': after, 'count': count})
+    recurse(subreddit, hot_list, params=updated_params)
