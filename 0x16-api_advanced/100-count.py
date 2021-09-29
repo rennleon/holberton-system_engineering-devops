@@ -42,8 +42,6 @@ def get_posts(subreddit, word_count={}, params={}):
     fill_repetitions(body.get('children', []), 0, word_count)
 
     if updated_params.get('after') is None:
-        [print('{}: {}'.format(key, val))
-         for key, val in sorted(word_count.items()) if val > 0]
         return
 
     return get_posts(subreddit, word_count, updated_params)
@@ -52,6 +50,24 @@ def get_posts(subreddit, word_count={}, params={}):
 def count_words(subreddit, word_list, word_count={}, params={}):
     """This function fetches a reddit posts and prints
     a word count"""
-    word_list = list(set([w.lower() for w in word_list]))
+    wl = [w.lower() for w in word_list]
+
+    word_list = list(set(wl))
     word_count = {w: 0 for w in word_list}
+
     get_posts(subreddit, word_count)
+
+    wc = {}
+    for w in wl:
+        wc[w] = wc.get(w, 0) + 1
+
+    reps = {}
+    for word, count in sorted(word_count.items()):
+        if count > 0:
+            ls = reps.get(count, [])
+            ls.append(word)
+            reps[count] = ls
+
+    for count, wlist in sorted(reps.items(), reverse=True):
+        for word in sorted(wlist):
+            print('{}: {}'.format(word, count * wc.get(word, 1)))
