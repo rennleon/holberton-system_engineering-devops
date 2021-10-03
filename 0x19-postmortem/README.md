@@ -1,7 +1,7 @@
 # 0x19. Postmortem
 
 <center>
-![typo meme](./typo-meme.jpeg)
+![typo meme](https://raw.githubusercontent.com/rennleon/holberton-system_engineering-devops/main/0x19-postmortem/typo-meme.jpeg)
 </center>
 
 ## Issue summary
