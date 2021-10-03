@@ -1,8 +1,10 @@
 # 0x19. Postmortem
 
 <center>
-![typo meme](https://raw.githubusercontent.com/rennleon/holberton-system_engineering-devops/main/0x19-postmortem/typo-meme.jpeg)
-</center>
+
+![typo meme](typo-meme.jpeg)
+
+<center>
 
 ## Issue summary
 Close to 10:00 hours of July 2nd some of our users encounter dificulties loading our website our team started receiving some calls from users that were online and suddently couldn't access to our platform the event was triggered at 10:05 by typo in the last actualization we made to our codebase, this bug caused that our website couldn't load properly and stopped with an error, thus causing the server to go down, the event was detected by the monitoring system at 10:07 which fired and alert notifying the development team, which started working on finding and fixoing the issue inmediately. This incident affected 36% of our users located in europe and asia.
