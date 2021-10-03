@@ -1,7 +1,7 @@
 # 0x19. Postmortem
 
 <center>
-![typo meme](typo-meme.jpeg)
+![typo meme](./typo-meme.jpeg)
 </center>
 
 ## Issue summary
