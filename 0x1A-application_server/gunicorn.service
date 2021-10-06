@@ -1,0 +1,18 @@
+[Unit]
+Description=Gunicorn instance to serve AirBnB_clone
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/AirBnB_clone_v4
+ExecStartPre = /bin/mkdir /run/airbnb_clone
+ExecStartPre = /bin/chown -R ubuntu:ubuntu /run/ubuntu
+ExecStart = /usr/bin/env HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db gunicorn web_dynamic.2-hbnb:app -bind 0.0.0.0:5003 --pid /run/airbnb_clone/airbnb_clone.pid
+ExecReload = /bin/kill -s HUP $MAINPID
+ExecStop = /bin/kill -s TERM $MAINPID
+ExecStopPost = /bin/rm -rf /run/sampleapp
+PrivateTmp = true
+
+[Install]
+WantedBy=multi-user.target
